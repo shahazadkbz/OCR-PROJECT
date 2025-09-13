@@ -1,66 +1,70 @@
-📝 NLP Twitter Sentiment Analysis
+🖼️ OCR Text Extraction with Tesseract
 
-This project applies Natural Language Processing (NLP) techniques and Machine Learning models to classify tweets into Positive, Negative, or Neutral categories.
+This project demonstrates how to extract text from images using Tesseract OCR in Google Colab. It allows you to upload an image, preprocess it, and run Optical Character Recognition (OCR) to get the text content.
 
 📂 Project Files
 
-nlp.ipynb → Jupyter Notebook with full code
-
-twitter_validation.csv → Dataset
+ocr.ipynb → Jupyter Notebook with OCR pipeline
 
 README.md → Project documentation
 
 🚀 Workflow
-1. Data Loading & Exploration
+1. Install Dependencies
 
-Loaded Twitter dataset (twitter_validation.csv)
+Install Tesseract OCR engine
 
-Dropped irrelevant entries
+Install required Python libraries: pytesseract, Pillow, opencv-python, matplotlib
 
-Visualized class distribution
+2. Import Libraries
 
-2. Preprocessing
+pytesseract → OCR engine interface
 
-Tokenization with NLTK TweetTokenizer
+PIL.Image → Image loading
 
-Removed special characters, numbers, and punctuation
+cv2 (OpenCV) → Preprocessing (grayscale, thresholding)
 
-Applied stemming with SnowballStemmer
+matplotlib → Display images in Colab
 
-Removed stopwords
+google.colab.files → Upload images
 
-3. Feature Engineering
+3. Define OCR Function
 
-Converted tweets into numerical format using TF-IDF Vectorizer
+Load the image
 
-4. Modeling (to be extended)
+Convert to grayscale
 
-Prepared features X and target labels y
+Apply thresholding for cleaner text detection
 
-Next steps: train models like Logistic Regression, Naive Bayes, and SVM
+Extract text using pytesseract.image_to_string()
 
-5. Evaluation (to be added)
+4. Upload & Display Image
 
-Accuracy, Precision, Recall, F1-score
+Upload any .jpg / .png file containing text
 
-Confusion Matrix
+Preview the uploaded image
+
+5. Run OCR & Extract Text
+
+Extract and display recognized text
+
+(Optional) Save extracted text into .txt file
 
 🛠️ Tech Stack
 
 Python
 
-Pandas, NumPy
+Tesseract OCR
 
-Matplotlib, Seaborn
+OpenCV
 
-NLTK
+Pillow (PIL)
 
-Scikit-learn
+Matplotlib
 
-📌 Future Work
+📌 Future Improvements
 
-Add multiple ML models for classification
+Improve preprocessing with adaptive thresholding
 
-Compare performance across models
+Handle multilingual OCR
 
-Experiment with deep learning (e.g., LSTM, BERT)
+Export results in structured formats (CSV, JSON)
